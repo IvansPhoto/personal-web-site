@@ -1,0 +1,17 @@
+@import "./scss/scss-variables";
+
+
+footer {
+  min-height: $footer-min-height;
+  display: flex;
+  align-content: center;
+  justify-content: space-evenly;
+  align-items: center;
+  border-top: 0.1rem solid var(--colorRed);
+}
+
+@media (max-width: #{$media-screen-mobile}) {
+  footer {
+    flex-direction: column;
+  }
+}

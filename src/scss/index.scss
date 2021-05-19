@@ -1,0 +1,41 @@
+@import "scss-variables";
+
+#Main {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	padding: 3rem;
+	align-items: start;
+	p {
+		margin: 0 0 0.5em 0;
+	}
+}
+
+.section-images {
+	position: sticky;
+	top: 1rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	img, svg {
+		width: 30vw;
+		align-self: center;
+		justify-self: center;
+	}
+}
+
+.svg-text {
+	fill: var(--colorFont);
+}
+
+@media (max-width: #{$media-screen-mobile}) {
+	#Main {
+		grid-template-columns: 1fr;
+		gap: unset;
+		padding: 1rem;
+	}
+	.section-images {
+		position: relative;
+		top: unset;
+	}
+}

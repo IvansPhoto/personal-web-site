@@ -1,0 +1,53 @@
+<main id="Contacts">
+	<h1>Contacts</h1>
+	<div id="Address">
+		<p>You can reach me on social media:</p>
+		<div class="sm-links">
+			<!--				TODO: Add icons.-->
+			<a href="https://vk.com/ivanpavlovphoto">VK</a>
+			<a href="https://www.facebook.com/profile.php?id=1835855816">FB</a>
+			<a href="https://www.linkedin.com/in/ivanpavlovnik/">Linkedin</a>
+		</div>
+	</div>
+
+	<form [class.form-hidden]="submitted" netlify name="contact" netlify-honeypot="bot-field" #contacts="ngForm"
+				(ngSubmit)="OnSubmit()">
+		<label style="display: none">Don’t fill this out if you're human: <input name="bot-field" type="text"></label>
+		<label for="Name">Name <span [hidden]="Name.valid || Name.pristine">The field is required</span></label>
+		<input id="Name" [(ngModel)]="contactForm.Name" #Name="ngModel"
+					 type="text" name="name" placeholder="Name / Surname / Full name" maxlength="100" required>
+
+		<label for="Email">Email {{contactForm.Email}}</label>
+		<input id="Email" [(ngModel)]="contactForm.Email" type="email" name="email" placeholder="adress@domain.com"
+					 maxlength="100" required>
+
+		<label for="Telephone">Phone {{contactForm.Phone}}</label>
+		<input id="Telephone" [(ngModel)]="contactForm.Phone" type="tel" name="telephone" placeholder="+** **** *******"/>
+
+		<label for="Role">Role {{contactForm.Role}}</label>
+		<input id="Role" [(ngModel)]="contactForm.Role" type="text" name="role" placeholder="HR / Manager / Developer"
+					 maxlength="100"/>
+
+		<label for="Message">Message {{contactForm.Message}}</label>
+		<textarea id="Message" [(ngModel)]="contactForm.Message"
+							name="message" placeholder="Input your message" autocomplete="off" rows="4" cols="50" maxlength="1000"
+							required></textarea>
+
+		<div data-netlify-recaptcha="true"></div>
+
+		<button class="button-contact" type="submit" [disabled]="!contacts.form.valid">Send the message</button>
+	</form>
+	<article [class.form-hidden]="!submitted">
+		<h2>You send the follow message:</h2>
+		<h3>Name:</h3>
+		<p>{{contactForm.Name}}</p>
+		<h3>Email:</h3>
+		<p>{{contactForm.Email}}</p>
+		<h3 [hidden]="contactForm.Phone === null">Phone:</h3>
+		<p [hidden]="contactForm.Phone === null">{{contactForm.Phone}}</p>
+		<h3 [hidden]="contactForm.Role === null">Role:</h3>
+		<p [hidden]="contactForm.Role === null">{{contactForm.Role}}</p>
+		<h3>Message:</h3>
+		<p>{{contactForm.Message}}</p>
+	</article>
+</main>

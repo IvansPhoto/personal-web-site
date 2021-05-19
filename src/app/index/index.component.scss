@@ -1,0 +1,57 @@
+@import "./src/scss/scss-variables";
+
+#Main {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	padding: 3rem;
+	align-items: start;
+}
+
+.section-images {
+	position: sticky;
+	top: 1rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	img, svg {
+		width: 30vw;
+		align-self: center;
+		justify-self: center;
+	}
+}
+
+.svg-text {
+	fill: var(--colorFont);
+}
+
+.resp-button {
+	font-weight: 300;
+	font-size: 1.5rem;
+	border: 0.1rem solid var(--colorRed);
+	color: var(--colorFont);
+	background-color: var(--colorBackground);
+	border-radius: 0.3em;
+	margin: 0.5em 0 0 0;
+}
+
+.responsibilities-list {
+	display: flex;
+	flex-direction: column;
+}
+
+@media (max-width: #{$media-screen-mobile}) {
+	#Main {
+		grid-template-columns: 1fr;
+		gap: unset;
+		padding: 1rem;
+	}
+	.section-images {
+		position: relative;
+		top: unset;
+
+		img, svg {
+			width: 90vw;
+		}
+	}
+}

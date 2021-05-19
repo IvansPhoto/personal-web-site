@@ -1,0 +1,97 @@
+#Contacts {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 1em;
+	align-items: start;
+	justify-items: center;
+	justify-content: center;
+	padding: 2em;
+	margin: 0 auto;
+	box-sizing: border-box;
+	color: var(--colorFont);
+
+	h3 {
+		margin-top: 1rem;
+	}
+
+	input,
+	textarea {
+		all: unset;
+		max-width: 100%;
+		white-space: pre-wrap;
+		overflow-wrap: break-word;
+		margin-bottom: 1.5rem;
+		font-size: 1.5rem;
+		border-top: none;
+		border-left: none;
+		border-right: none;
+		border-bottom: 0.1rem solid var(--colorFont);
+	}
+
+	form {
+		width: 35vw;
+		font-size: 1.5rem;
+		display: flex;
+		flex-direction: column;
+	}
+
+	label {
+		font-size: 1.5rem;
+		font-weight: 500;
+		span {
+			color: var(--colorRed);
+		}
+	}
+
+	.button-contact {
+		width: 100%;
+		height: 3rem;
+		font-size: 1.5rem;
+		color: var(--colorFont);
+		text-transform: uppercase;
+		text-align: center;
+		background-color: var(--colorCyanC);
+		border: none;
+	}
+
+	h1 {
+		align-self: flex-end;
+		justify-self: center;
+		grid-column: 1 / 3;
+		margin: 3rem 0 2rem 0;
+	}
+}
+
+#Address {
+	display: flex;
+	flex-direction: column;
+}
+
+.sm-links {
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.form-hidden {
+	display: none !important;
+}
+
+@media (max-width: 900px) {
+	#Contacts {
+		grid-template-columns: 1fr;
+		grid-auto-rows: auto;
+		gap: 1.5rem;
+		justify-items: stretch;
+
+		h1 {
+			grid-column: span 1;
+		}
+
+		form {
+			width: 80vw;
+		}
+		.button-contact {
+			height: 5rem;
+		}
+	}
+}
