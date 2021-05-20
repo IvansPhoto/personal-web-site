@@ -43,15 +43,19 @@
 		}
 	}
 
-	.button-contact {
+	button {
 		width: 100%;
 		height: 3rem;
 		font-size: 1.5rem;
-		color: var(--colorFont);
 		text-transform: uppercase;
 		text-align: center;
-		background-color: var(--colorCyanC);
-		border: none;
+		border: 0.1rem solid var(--colorRed);
+		color: var(--colorRed);
+		background-color: var(--colorBackground);
+		&[disabled]{
+			color: grey;
+			border-color: grey;
+		}
 	}
 
 	h1 {
@@ -70,6 +74,11 @@
 .sm-links {
 	display: flex;
 	justify-content: space-evenly;
+	margin-top: 3rem;
+	img {
+		width: 5rem;
+		height: 5rem;
+	}
 }
 
 .form-hidden {
@@ -90,8 +99,16 @@
 		form {
 			width: 80vw;
 		}
-		.button-contact {
-			height: 5rem;
+		button {
+			height: 3rem;
+		}
+	}
+	.sm-links {
+		justify-content: space-between;
+		margin-top: 1.5rem;
+		img {
+			width: 3rem;
+			height: 3rem;
 		}
 	}
 }
