@@ -1,0 +1,4 @@
+<button class="resp-button" (click)="hideResp()">{{ showHideText() }}</button>
+<div class="responsibilities-list" *ngIf="isShown">
+	<p *ngFor="let res of responsibilitiesList">{{ res }}</p>
+</div>
